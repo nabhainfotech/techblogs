@@ -57,7 +57,7 @@ Convention observed so far: each post is its own branch (`content/<slug>`) with 
 
 **Deployment** (`.github/workflows/deploy.yml`): on every push to `master` — `npm install` → `npm run validate:posts` → `npm run build` → upload `dist/` to GitHub Pages. Also runs (build only, no deploy) on PRs against `master`.
 
-**Site identity** (`src/config/site.js`): `SITE_NAME`, `SITE_URL`, `SITE_DESCRIPTION` — the single source of truth for the app's `document.title` calls, `index.html`'s default meta tags, and both build scripts below. Update it here (e.g. when a custom domain is added; there's currently no `public/CNAME`, so the site is served at `techghost92.github.io/techblogs`), not in multiple files.
+**Site identity** (`src/config/site.js`): `SITE_NAME`, `SITE_URL`, `SITE_DESCRIPTION` — the single source of truth for the app's `document.title` calls, `index.html`'s default meta tags, and both build scripts below. Update it here (e.g. when a custom domain is added; there's currently no `public/CNAME`, so the site is served at `nabhainfotech.github.io/techblogs`), not in multiple files.
 
 **RSS and per-post OG tags**: `npm run build` runs two extra steps via npm's `pre`/`post` script hooks (`package.json`), invisible unless you look:
 
